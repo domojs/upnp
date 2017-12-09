@@ -1,0 +1,29 @@
+{
+  "author": "npenin",
+  "dependencies": {
+    "@akala/server": "^1.0.57",
+    "@akala/json-rpc-ws": "^4.1.21",
+    "@domojs/service-discovery": "*",
+    "node-ssdp": "github:npenin/node-ssdp"
+  },
+  "deprecated": false,
+  "description": "",
+  "devDependencies": {
+    "snyk": "^1.30.1",
+    "@types/request": "^2.0.7",
+    "@types/ws": "^3.2.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.2"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "@domojs/upnp",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc -p src"
+  },
+  "snyk": true,
+  "typings": "dist/index.d.ts",
+  "version": "1.0.11"
+}

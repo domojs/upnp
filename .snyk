@@ -1,0 +1,31 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2017-09-22T07:20:33.134Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-09-22T07:20:33.134Z'
+    - gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2017-09-22T07:20:33.134Z'
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2017-09-22T07:20:33.134Z'
+  'npm:ms:20170412':
+    - '@akala/server > server-static > socket.io > engine.io > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > socket.io-adapter > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > socket.io-client > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > socket.io-client > engine.io-client > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > socket.io-adapter > socket.io-parser > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > socket.io-client > socket.io-parser > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > socket.io-parser > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
+    - '@akala/server > server-static > socket.io > debug > ms':
+        patched: '2017-09-22T07:20:33.134Z'
