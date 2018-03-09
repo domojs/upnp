@@ -8,7 +8,7 @@ import * as sd from '@domojs/service-discovery'
 var log = debug('domojs:upnp');
 export { Service } from './upnp';
 
-akala.injectWithName(['$isModule', '$worker'], function (isModule: (m: string) => boolean, worker: EventEmitter)
+akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.IsModule, worker: EventEmitter)
 {
     if (isModule('@domojs/upnp'))
     {
