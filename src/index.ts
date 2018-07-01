@@ -1,7 +1,7 @@
 import * as akala from '@akala/server';
 import * as debug from 'debug';
 import * as upnp from './upnp'
-import * as ssdp from 'node-ssdp';
+import * as ssdp from 'ssdp-ts';
 import * as dgram from 'dgram'
 import { EventEmitter } from 'events'
 import * as sd from '@domojs/service-discovery'
@@ -18,7 +18,7 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
         {
             akala.worker.createClient('zeroconf').then(function (c)
             {
-                var server = sd.meta.createServerProxy(c);
+                var server = akala.api.jsonrpcws(sd.meta).createServerProxy(c);
                 var http: akala.Http = akala.resolve('$http');
                 var handle = function (headers: ssdp.Headers, rinfo: dgram.RemoteInfo)
                 {
@@ -33,8 +33,8 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
                     }
                     if (!devices[headers.USN])
                     {
-                        devices[headers.USN] = setTimeout(removeDevice, headers['CACHE-CONTROL'].substring('max-age='.length) * 1000);
-                        http.getXML(headers.LOCATION).then(function (xml: any)
+                        devices[headers.USN] = setTimeout(removeDevice, Number(headers['CACHE-CONTROL'].substring('max-age='.length)) * 1000);
+                        http.getXML(headers.LOCATION).then(function (xml)
                         {
                             akala.each(xml.root.device, function (device)
                             {
