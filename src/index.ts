@@ -5,7 +5,6 @@ import * as ssdp from 'ssdp-ts';
 import * as dgram from 'dgram'
 import { EventEmitter } from 'events'
 import * as sd from '@domojs/service-discovery'
-var log = debug('domojs:upnp');
 export { Service } from './upnp';
 
 akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.IsModule, worker: EventEmitter)
@@ -22,7 +21,7 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
                 var http: akala.Http = akala.resolve('$http');
                 var handle = function (headers: ssdp.Headers, rinfo: dgram.RemoteInfo)
                 {
-                    console.log(headers);
+                    akala.logger.info(headers);
                     var services: upnp.Service[] = [];
                     function removeDevice()
                     {
@@ -82,7 +81,7 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
             client.start(function (err)
             {
                 if (err)
-                    console.error(err);
+                    akala.logger.error(err);
 
             });
 

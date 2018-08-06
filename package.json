@@ -20,6 +20,7 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "name": "@domojs/upnp",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
