@@ -50,8 +50,11 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
                                             },
                                             headers: headers
                                         };
-                                        services.push(service);
-                                        server.add(service);
+                                        if (service.type == headers.ST)
+                                        {
+                                            services.push(service);
+                                            server.add(service);
+                                        }
                                     });
                                 else
                                 {
