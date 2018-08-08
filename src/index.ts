@@ -40,8 +40,15 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
                                 if (device.serviceList && device.serviceList.length > 0)
                                     akala.each(device.serviceList[0].service, function (svc)
                                     {
+                                        var icons = {};
+                                        akala.each(device.iconList[0].icon, function (icon)
+                                        {
+                                            icons[icon.width] = new URL(icon.url[0], headers.LOCATION);
+                                        })
+
                                         var service: upnp.Service = {
-                                            name: svc.serviceId[0],
+                                            name: device.friendlyName[0],
+                                            icons: icons,
                                             type: svc.serviceType[0],
                                             descriptor: {
                                                 scpd: svc.SCPDURL[0],
