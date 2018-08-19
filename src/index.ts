@@ -1,6 +1,6 @@
 import * as akala from '@akala/server';
-import * as debug from 'debug';
 import * as upnp from './upnp'
+import { URL } from 'url'
 import * as ssdp from 'ssdp-ts';
 import * as dgram from 'dgram'
 import { EventEmitter } from 'events'
