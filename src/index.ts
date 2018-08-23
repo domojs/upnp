@@ -37,14 +37,15 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
                         {
                             akala.each(xml.root.device, function (device)
                             {
+                                var icons = {};
+                                akala.each(device.iconList[0].icon, function (icon)
+                                {
+                                    icons[icon.width] = new URL(icon.url[0], headers.LOCATION);
+                                })
+
                                 if (device.serviceList && device.serviceList.length > 0)
                                     akala.each(device.serviceList[0].service, function (svc)
                                     {
-                                        var icons = {};
-                                        akala.each(device.iconList[0].icon, function (icon)
-                                        {
-                                            icons[icon.width] = new URL(icon.url[0], headers.LOCATION);
-                                        })
 
                                         var service: upnp.Service = {
                                             name: device.friendlyName[0],
@@ -73,6 +74,7 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
                                             control: null,
                                             event: null
                                         },
+                                        icons: icons,
                                         headers: headers
                                     };
                                     services.push(service);
