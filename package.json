@@ -1,7 +1,6 @@
 {
   "author": "npenin",
   "peerDependencies": {
-    "@akala/json-rpc-ws": "^4.1.23",
     "@akala/server": "^2.0.28",
     "@domojs/service-discovery": "^1.1.0"
   },
@@ -11,7 +10,6 @@
   "deprecated": false,
   "description": "",
   "devDependencies": {
-    "@akala/json-rpc-ws": "^4.1.23",
     "@akala/server": "^2.0.28",
     "@domojs/service-discovery": "^1.1.0",
     "@types/node": "^8.10.0",
