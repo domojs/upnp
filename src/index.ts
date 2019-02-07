@@ -15,7 +15,7 @@ akala.injectWithName(['$isModule', '$worker'], function (isModule: akala.worker.
 
         worker.on('ready', function ()
         {
-            akala.worker.createClient('zeroconf').then(function (c)
+            akala.worker.createClient('api/zeroconf').then(function (c)
             {
                 var server = akala.api.jsonrpcws(sd.meta).createServerProxy(c);
                 var http: akala.Http = akala.resolve('$http');
