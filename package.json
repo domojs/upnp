@@ -10,7 +10,7 @@
   "deprecated": false,
   "description": "",
   "devDependencies": {
-    "@akala/server": "^2.1.10",
+    "@akala/server": "^3.0.30",
     "@domojs/service-discovery": "^1.1.7",
     "@types/node": "^11.9.0",
     "@types/ws": "^6.0.1",
