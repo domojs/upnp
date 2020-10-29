@@ -13,7 +13,7 @@
     "@akala/server": "^2.1.10",
     "@domojs/service-discovery": "^1.1.7",
     "@types/node": "^11.9.0",
-    "@types/ws": "^6.0.1",
+    "@types/ws": "^7.2.9",
     "snyk": "^1.126.0"
   },
   "license": "MIT",
